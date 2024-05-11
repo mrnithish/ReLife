@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Lusher color test</title>
+    <meta name="author" content="Nithish  Kumar G">
+    <meta name="translator" content="Nithish Kumar G">
+    <meta name="last-update" content="24/03/2020">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!--
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<style></style>
+  </head>
+  <body class="text-center" cz-shortcut-listen="true"><header>
+    <nav class="navbar navbar-expand-lg my-0 navbar-light" id="custom-nav-css"> <!-- navbar uses bootstrap code seen as seen in https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <div class="container-fluid"> 
+        <a class="navbar-brand active" href="index.html" id="custom-navbar-brand-mobile-responsiveness">
+            <img src="assets/images/Logo.png" class="d-inline-block align-top" alt="ReLife logo" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="nav navbar-nav mx-auto">
+                <li><a class="nav-link rlf-nav" href="educate-yourself.html">Educate Yourself</a></li>
+                <li><a class="nav-link rlf-nav" href="help-yourself.html">Help Yourself</a></li>
+                <li><a class="nav-link rlf-nav" href="help-others.html">Help Others</a></li>
+                <li><a class="nav-link rlf-nav" href="spread-the-word.html">Spread the Word</a></li> 
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a class="nav-link mha-nav" href="lusher.html"><b>Take a Test</b></a></li>
+          </ul>
+        </div>
+    </div>
+    </nav>
+</header>
+    
+
+
+	<div class="choices cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <h3 class="cover-heading welcome">Max Lüscher color test</h3>
+
+    <div class="row">
+
+    <!-- BEGINNING : LEFT CARD -->
+    <div id="saisie" class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+      <div class="form-group row">
+          <label for="NameSelect" class="col-sm-4">1. Please enter your gender :</label>
+          <select id="NameSelect" class="form-control col-sm-7">
+            <option value="Anonyme" selected>Choose here</option>
+            <option value="TBH">Male</option>
+            <option value="AT">Female</option>
+            <option value="Anonyme">Prefer Not To Say</option>
+          </select>
+       </div>
+       <p class="instruction card-text">2. Click on the color you like best.</p>
+     </div>
+   </div>
+  </div>
+
+  <!-- RESULTS : LEFT CARD -->
+  <div id="synthese" class="col-sm-6">
+    <div class="card choices">
+      <div class="card-body">
+        <h5 class="card-title">Summary of results :</h5>
+        <!-- <p class="card-text">With supportional content.</p> -->
+        <div class="row">
+          <div id="name" class="col-sm-6"></div>
+          <div id="date" class="col-sm-6"></div>
+        </div>
+        <form>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <input id="colors" type="text" readonly class="form-control-plaintext form-control-sm" size="8" value="">
+            </div>
+            <div class="col-sm-6">
+              <input id="idcolors" type="text" readonly class="form-control-plaintext form-control-sm" size="8" value="">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT CARD -->
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Choice of colors :</h5>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <!-- <label for="colors" class="col-sm-12 col-form-label">Choix de couleurs :</label>-->
+              <!-- nuancier de couleurs permettant de voir le résultat -->
+                <div id="nuancier" style="width:160px; height:23px; background-color:#eeeeee; border:1px solid blue;">
+                  <div id="col1" class="d-inline-block nuance" style=""></div>
+                  <div id="col2" class="d-inline-block nuance" style=""></div>
+                  <div id="col3" class="d-inline-block nuance" style=""></div>
+                  <div id="col4" class="d-inline-block nuance" style=""></div>
+                  <div id="col5" class="d-inline-block nuance" style=""></div>
+                  <div id="col6" class="d-inline-block nuance" style=""></div>
+                  <div id="col7" class="d-inline-block nuance" style=""></div>
+                  <div id="col8" class="d-inline-block nuance" style=""></div>
+                </div>
+                <input id="colors2" type="text" readonly class="form-control-plaintext form-control-sm" size="8" value="">
+                <!-- <input id="idcolors2" type="text" readonly class="form-control-plaintext form-control-sm" size="8" value=""> -->
+            </div>
+            <div class="col-sm-6">
+              <input type="submit" class="btn btn-outline-dark" name="toggle1" value="Repeat the test!" id="toggle1" />
+
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end row 1 -->
+
+<div class="row">
+<!-- ROW 2 : LEFT CARD -->
+<div class="col-sm-6">
+  <div class="card choices">
+    <div id="analyse-so" class="card-body">
+      <h5 class="card-title">Neuropsychological tension (Total deviation) :</h5>
+      <!-- <p class="card-text">With supporting text.</p> -->
+    </div>
+  </div>
+</div>
+<!-- ROW 2 : RIGHT CARD -->
+<div class="col-sm-6">
+  <div class="card choices">
+    <div id="analyse-vk" class="card-body">
+      <h5 class="card-title">Coefficient of psycho-vegetative activity :</h5>
+      <!-- <p class="card-text">With supporting text.</p> -->
+    </div>
+  </div>
+</div>
+</div><!-- end row 2 -->
+</div><!-- end container -->
+
+      <div class="" align="center">
+           <div class="instruction row">
+              <p class="instruction col-sm-12">Click on the color you like best.</p>
+           </div>
+           <div class="ligneHaute row">
+             <div class="col-sm-2"></div>
+             <div id="coul3" class="card cardcoul col-sm-2 block1"></div>
+             <div id="coul4" class="card cardcoul col-sm-2 block2"></div>
+             <div id="coul2" class="card cardcoul col-sm-2 block3"></div>
+             <div id="coul5" class="card cardcoul col-sm-2 block4"></div>
+             <div class="col-sm-2"></div>
+          </div>
+          <div class="ligneBasse row">
+            <div class="col-sm-2"></div>
+            <div id="coul3" class="card cardcoul col-sm-2 block5"></div>
+            <div id="coul4" class="card cardcoul col-sm-2 block6"></div>
+            <div id="coul2" class="card cardcoul col-sm-2 block7"></div>
+            <div id="coul5" class="card cardcoul col-sm-2 block0"></div>
+            <div class="col-sm-2"></div>
+         </div>
+      </div>
+
+  <script type="text/javascript">
+
+    $(function(){
+      // $(document).ready(function() { // ANCIEN CODE JQUERY
+      var debug = true;
+      var fulldebug = false;
+      if (debug===true) {
+        console.log("Debug mode activated: traces displayed.")
+      } else {
+        console.log("Debug mode inactive. You can activate it by setting the debug variable to true.")
+      }
+      var tabChoices = [];
+      var tabColors = [];
+      var sColors = "";
+      var so = 0; 
+      var vk = 0; 
+      var numRx = /block(\d)/;
+      var so_interpretation = [
+        "Absence of unproductive neuropsychic tension. The test subject is active, his actions are varied and his efficiency is high. Emotional attitude is optimistic. Voluntary self-control is developed. At the same time, willpower is not an instrument for suppressing any part of the personality; it merely harmonizes the subject's diverse but non-contradictory desires. With the right motivation, the subject is able to work intensively for a long time. In extreme situations, he mobilizes effectively and concentrates on the task",
+        "Insignificant level of unproductive neuropsychic tension. The subject is dominated by an activity-oriented attitude. His energy resources are sufficient for more or less regular bouts of overactivity and tension, unavailable to most others. Under conditions of motivated (interesting) activity, he has no difficulty in storing and reproducing long-term information. In general, they do not seek strong sensations. They emerge from stressful situations with dignity",
+        "The level of unproductive neuropsychic tension is average. Under average conditions, the subject is able to cope with his workload and obligations. In a normal environment, he can switch from work to leisure and vice-versa (or from one type of activity to another) without major difficulty. If necessary, he can overcome fatigue by voluntary effort, but after that, a long period of reduced work capacity will appear in his actions and well-being. To maintain health and good performance, it is necessary for the subject to separate work and rest times more clearly and subjectively",
+        "Increased level of unproductive neuropsychic tension. The potential usefulness of the subject's activity is very low. For this reason, he is obliged to force himself to do certain irreplaceable things. Constantly acting under the control of his will reinforces his fatigue. Long, intensive work will certainly be neuropsychologically costly for the subject. What's more, over time, the work will be very uneven in terms of productivity and quality. The general emotional context is characterized by heightened excitability, anxiety and uncertainty. In a stressful situation, a breakdown in activity and behavior is likely.",
+        "Severe unproductive neuropsychic tension. The subject is extremely tired. His attention is easily distracted by extraneous things, while being characteristically “stuck” in emotional experiences. The absence of a stable hierarchy of motives makes the subject reactive and fuzzy. Moods can swing between elation and depression, excitement and helplessness. In an emotional state, anxiety, premonition of trouble, helplessness and lack of desire to do anything prevail. In an extreme situation, the subject is unreliable."
+      ];
+
+      var vk_interpretation = ["Exhaustion, settling into inaction. Chronic overwork. Passive response to difficulties, lack of preparation for stress and inadequate action in stressful situations are characteristic. Diversified and voluminous restorative measures are required ",
+
+"The subject is adapted to optimize energy expenditure. Moderate need for recovery and rest. Energy potential is low, but quite sufficient for successful activity in the calm conditions to which he is accustomed. In extreme situations, delays in orientation and decision-making are likely",
+"Optimal mobilization of physical and mental resources, the subject is ready to take action. In an extreme situation, speed in orientation and decision-making is most likely, making actions feasible and successful.",
+"Excessive excitement, restlessness, fussiness. The level of excitement is excessively high. There are frequent cases where the subject does something not for its own sake, but only to unload. In difficult situations, febrile reactions are easily formed: impulsiveness, impatience, diminished self-control, a tendency to act rashly and thoughtlessly. In extreme situations, the most likely outcome is ineffective action and panic reactions. Relaxing and soothing treatments are necessary."
+];
+    //rouge (3), jaune (4), vert (2), violet (5), bleu (1), marron (6), gris (0), noir (7)
+    var autnorma = [3, 4, 2, 5, 1, 6, 0, 7];
+    /*
+    "0" : {"gris", "G"},
+    "1" : {"bleu", "B"},
+    "2" : {"vert", "V"},
+    "3" : {"rouge", "R"},
+    "4" : {"jaune", "J"},
+    "5" : {"violet", "F"}, // F pour fuschsia
+    "6" : {"marron", "M"},
+    "7" : {"noir", "N"}
+     */
+    var couleursJson = {
+      "0" : "G",
+      "1" : "B",
+      "2" : "V",
+      "3" : "R",
+      "4" : "J",
+      "5" : "F", // F pour fuschsia
+      "6" : "M",
+      "7" : "N"
+    };
+
+    var colorsHtml = {
+      "0" : "#8b8878", //"G",
+      "1" : "#00008b", //"B",
+      "2" : "#228b22", //"V",
+      "3" : "#ff4040", //"R",
+      "4" : "#ffd700", //"J",
+      "5" : "#8b668b", //"F", // F pour fuschsia
+      "6" : "#8b4513", //"M",
+      "7" : "#1c1c1c"  //"N"
+    };
+
+    var instructionString = [
+      "Click on the color that appeals to you most now.",
+      "Which of the remaining colors appeals to you most?"
+    ];
+
+    var sItemNumber = "";
+    var itemNumber = 0;
+    var iClick = 0;
+
+    // Beginning
+    $('div#synthese').hide(); // We remove the results
+    $("div.choices").hide(); // We hide the results
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    function randomblocks(){
+      var colorsHtml = {
+        "0" : "#8b8878", //"G",
+        "1" : "#00008b", //"B",
+        "2" : "#228b22", //"V",
+        "3" : "#ff4040", //"R",
+        "4" : "#ffd700", //"J",
+        "5" : "#8b668b", //"F", // F for fuschsia
+        "6" : "#8b4513", //"M",
+        "7" : "#1c1c1c"  //"N"
+      };
+
+      for (i = 0; i < 8; i++) {
+        $(".block"+(autnorma[i])).css('background-color', colorsHtml[i]);
+      }
+
+      // autnorma
+      /* 12  / 0,7
+                                                AUTNORMA
+      .block1 {  background: #00008b; (blue) } ==> 3
+      .block2 {  background: #228b22; (green) } ==> 4
+      .block3 {  background: #ff4040; (red) } ==> 2
+      .block4 {  background: #ffd700; (yellow) } ==> 5
+      .block5 {  background: #8b668b; (F) }    ==> 1
+      .block6 {  background: #8b4513; M }      ==> 6
+      .block7 {  background: #1c1c1c; N }      ==> 0
+      .block0 {  background: #8b8878; G }      ==> 7
+      */
+    }
+
+    if (debug===true) console.log("autnorma",autnorma)
+    // shuffle(autnorma);
+    if (debug===true) console.log("autnorma shuffled",autnorma)
+
+    //$('.block').click(function(event) {
+    $('.cardcoul').click(function(event) {
+        if (fulldebug===true) console.log("block click",$(this));
+
+        // trigger event : The clicked block is hidden
+        event.preventDefault();
+        $( this ).hide();
+        // the class is written as follows : class="block1 block"
+        // We'll retrieve the first element : ici "block1"
+        sItemNumber = numRx.exec(
+           $(this).attr('class')
+        )[1];
+        if (fulldebug===true) console.log("string : ", sItemNumber)
+        itemNumber = parseInt(sItemNumber) // convert the string into an integer.
+        // We add the element to the table of successive choices
+        tabChoices.push(itemNumber);
+        tabColors.push(couleursJson[itemNumber]);
+
+        if (fulldebug===true) console.log("Selected (and hidden) card : ", itemNumber)
+        if (fulldebug===true) console.log("Successive choices : ", tabChoices)
+        if (fulldebug===true) console.log("HTML flow : ", colorsHtml[itemNumber])
+
+        // We put the colors in the result color chart
+        iClick = iClick + 1
+        $("div#col" + (iClick)).css('background-color', colorsHtml[itemNumber]);
+
+        if (tabChoices.length == 1) {
+          $('p.instruction').remove(); // Remove the first line of instructions
+          $("div.instruction").append("<p class=\"instruction col-sm-12\">"+instructionString[1]+"</p>");
+        }
+        if (tabChoices.length == 8) {
+            // After the last item has been clicked,
+            iClick = 0; // Reset to zero
+            showchoices(); // calculate and show results
+        }
+    });
+
+    // Press the “Restart” button
+    $('#toggle1').click(function() {
+        if (debug===true) console.log("#toggle1 click (Recommencer)")
+
+        // On CACHE (hide) :
+        $("div#analyse-so").hide();
+        $("div#analyse-vk").hide();
+        $("div#synthese").hide();
+
+        $("div.choices").hide();
+        $("#colors2").hide();
+        $('.welcome').hide(); // welcome title block
+
+        // We DISPLAY (show) :
+        $('.cardcoul').show(); // color cards
+        $('div#saisie').show(); // input block
+
+        // Reset the colors in the color chart
+        for (i = 0; i < 8; i++) {
+          $("div#col"+(i+1)).css('background-color', 'rgba(0, 123, 255, 0.26)');
+        }
+        // Reset temporary data tables
+        tabChoices = [];
+        tabColors = [];
+        sColors = "";
+   
+
+        $('p.choices').remove(); 
+        $('p.instruction').remove();
+        $("div.instruction").append("<p class=\"instruction col-sm-12\">"+instructionString[0]+"</p>");
+    });
+
+    
+    function showchoices() {
+        if (debug===true) console.log("Couleurs choisies : ", tabColors)
+
+        $('.welcome').hide(); 
+        $('p.instruction').remove(); 
+
+        
+        var subjectName = ""
+        subjectName = $("#NameSelect").children("option:selected").val();
+        $('div#saisie').hide(); 
+
+        // Initialize variables
+        so = 0; 
+        vk = 0; 
+        var so_string = "Result related to neuropsychic tension";
+        var vk_string = "Result linked to the psycho-vegetative activity coefficient";
+     
+        var so_interval = "[]";
+        var vk_interval = "[]";
+        // Date and time initialisation
+        var dt = new Date();
+        var datetime = "" + dt.getDate() + "/" + (dt.getMonth()+1)  + "/" + dt.getFullYear() + "   "
+            + dt.getHours() + ":" + dt.getMinutes(); // + ":" + dt.getSeconds();
+
+        
+        for (var i = 0; i < tabChoices.length; i++) {
+          
+            if (debug===true) console.log("" + [i] + " " + so + " + ABS(Norme(" + autnorma.indexOf(i) + ")-Choix(" + tabChoices.indexOf(i) + "))")
+            so += Math.abs(autnorma.indexOf(i) - tabChoices.indexOf(i));
+        }
+        if (debug===true) console.log("Neuropsychological tension (Total deviation) : " + so)
+
+        
+        vk = (18 - tabChoices.indexOf(3) - tabChoices.indexOf(4) - 2) / (18 - tabChoices.indexOf(1) - tabChoices.indexOf(2) - 2);
+        vk = Math.round(vk * 10) / 10;
+        if (debug===true) console.log("Coefficient of vegetative activity : " + vk)
+
+       
+        if (so <= 6) {
+            so_string = so_interpretation[0];
+            so_interval = "[0 <= so <= 6]";
+        }
+        else if (so <= 12) {
+            so_string = so_interpretation[1];
+            so_interval = "[6 < so <= 12]";
+        }
+        else if (so <= 20) {
+            so_string = so_interpretation[2];
+            so_interval = "[12 < so <= 20]";
+        }
+        else if (so <= 26) {
+            so_string = so_interpretation[3];
+            so_interval = "[20 < so <= 26]";
+        }
+        else if (so <= 32) {
+            so_string = so_interpretation[4];
+            so_interval = "[26 < so <= 32]";
+        }
+
+        
+        if (vk <= 0.4) {
+            vk_string = vk_interpretation[0];
+            vk_interval = "[0 <=  vk <= 0.4]";
+        }
+        else if (vk <= 0.8) {
+            vk_string = vk_interpretation[1];
+            vk_interval = "[0.4 < vk <= 0.8]";
+        }
+        else if (vk <= 1.9) {
+            vk_string = vk_interpretation[2];
+            vk_interval = "[0.8 < vk <= 1.9]";
+        }
+        else if (vk <= 5) {
+            vk_string = vk_interpretation[3];
+            vk_interval = "[1.9 < vk <= 5]";
+        }
+
+        
+        $("div#name").append("<p class=\"choices\">Nom : " + subjectName + "</p>");
+        $("div#date").append("<p class=\"choices\">Date : " + datetime + "</p>");
+        $("input#colors").attr('value',"" + tabColors.join(""));
+        $("input#idcolors").attr('value',"" + tabChoices.join(""));
+        $("div#synthese").show();
+
+        
+        $("input#colors2").attr('value',"" + tabColors.join(""));
+        $("input#idcolors2").attr('value',"" + tabChoices.join("-"));
+        $("#colors2").show();
+
+        $("div#analyse-so").append("<p class=\"choices\">SО = " + so + "<span style=\"font-weight:lighter;\">    avec " + so_interval + "</span></p>");
+        $("div#analyse-so").append("<p class=\"choices description\">   " + so_string + "</p>");
+        $("div#analyse-so").show();
+
+        
+        $("div#analyse-vk").append("<p class=\"choices\">CК = " + vk + "<span style=\"font-weight:lighter;\">    avec " + vk_interval +"</span></p>");
+        $("div#analyse-vk").append("<p class=\"choices description\">   " + vk_string + "</p>");
+        $("div#analyse-vk").show();
+
+        
+        $("div.choices").show();
+
+      }
+
+    }); // fin JQuery
+    </script>
+  </body>
+</html>
